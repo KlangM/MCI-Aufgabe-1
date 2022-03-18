@@ -19,7 +19,6 @@ Start über Kommandozeile
 Daten müssen wie wie folgt vorliegen?
 
 ## Contributing
-**(Wer ist im Team Name + Matrikelnummer + Email)**
 
 - [Moritz Krefft - 52111804](m.krefft@mci4me.at)
 - [Melvin Klang - 52110059](m.klang@mci4me.at)
