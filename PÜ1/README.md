@@ -21,7 +21,8 @@ Daten müssen wie wie folgt vorliegen?
 ## Contributing
 **(Wer ist im Team Name + Matrikelnummer + Email)**
 
-- [Julian Huber - 123](julian.huber@mci.edu)
+- [Moritz Krefft - 52111804](m.krefft@mci4me.at)
+- [Melvin Klang - 52110059](m.klang@mci4me.at)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
