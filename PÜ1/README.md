@@ -1,11 +1,10 @@
 # Leistungsdiagnostik
 **(kurze Beschreibung des Ziels)**
 
-Werkzeug zur Vereinfachung und Automatisierung von Leistungstests, basierend auf EKG-Daten und Leistungswerten und Patient:innen-Daten
+Werkzeug zur Vereinfachung und Automatisierung von Leistungstests, basierend auf EKG-Daten und Leistungswerten und Patient:innen-Daten.
+Patient:innen-Daten werden zusammen mit EKG-Daten abgespeichert. Es besteht die möglichkeit ungültige Durchläufe abzubrechen und zu vermerken. 
 
 ## Installation
-
-(Was muss man tun, bevor man das Werkzeug nutzen kann?)
 
 t.b.d.
 
