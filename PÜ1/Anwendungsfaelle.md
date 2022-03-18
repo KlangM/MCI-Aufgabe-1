@@ -10,7 +10,7 @@
 ### UC 2.5. - Visualisierung der Daten
 
 
-|                                | Beispiel                                                                                                                                         |
+|                                | Erklärung                                                                                                                                         |
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | Name und Identifikationsnummer | UC 2.5. - Visualisierung der Daten                                                                                                                |
 | Beschreibung                   | Die Diagnostiker:in führt das Programm aus, welche alle neuen Daten zu Leistungstests einliest und nacheinander aufbereitet. Die Diagnostiker:in kann alle Tests bewerten und dann abspeichern   |
@@ -25,6 +25,5 @@
 | Alternative Ablaufschritte     | Diagnostiker:in erkennt Abbruchgrund und gibt diesen ein. Eingabe wird dokumentiert und mit Daten gespeichert.                                                                         |
 | Hinweise                       | keine                                                                                                                                            |
 | Änderungsgeschichte            | 0.01; 18.03.2022.; Moritz Krefft und Melvin Klang                                                                                                                  |
-|                                |                                                                                                                                                  |
 
 ### Weitere sind zu befüllen
