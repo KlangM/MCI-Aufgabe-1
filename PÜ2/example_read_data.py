@@ -14,7 +14,7 @@ plt.show()
 
 
 # %%
-for i in range(3):
+for i in range(3):                                #die schleife spuckt uns die 3 arrays raus                          
      m = str(i + 1)
      x = ('input_data/power_data_'+m +'.txt')
      power_data_watts = open(x).read().split("\n")
@@ -22,7 +22,7 @@ for i in range(3):
      print(y)
      print(x)
 # %%
-for i in range(3):
+for i in range(3):                                #die graphen sind nur von einem array des müssen wir noch ändern
     plt.title("Line graph"+str(i +1))
     plt.plot(y, color="green")
     plt.show()
