@@ -35,7 +35,9 @@ Aus diesem muss die Herzrate bestimmt werden.
 
 ### Assumptions and dependencies
 
-Funktionionsfähiges EKG und Fahrradergometer
+Die .json Dateien enthalten Daten über Probanden und Test. Die .csv sind die unverarbeiteten EKG Daten. Die .txt Dateien sind die weiterverarbeiteten .csv Daten welche die Leistung des Probanden wiederspiegelt. Die .txt Datei kann direkt zum visualiesieren verwendet werden. 
+
+Der Test dauert 180s. EKG misst jede ms einen Wert und speichert diesen .csv Datei ab.
 
 ### Design and implementation constraints
 
