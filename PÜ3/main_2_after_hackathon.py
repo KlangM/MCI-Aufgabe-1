@@ -1,13 +1,14 @@
-# UC 2.0
-
+#%%
+# Importieren benötigter bibliotheken
+import os
+import pandas as pd
+import neurokit2 as nk
+import json
 #%% UC 2.1 Einlesen der Daten
 
 
 list_of_new_tests = []
-## Überprüfen ob Dateien vorhanden sind
-
-import os
-import pandas as pd
+#%% Überprüfen ob Dateien vorhanden sind
 
 folder_current = os.path.dirname(__file__) 
 folder_input_data = os.path.join(folder_current, 'input_data')
@@ -28,8 +29,6 @@ new_ecg_data["Subject_3"].plot()
 #%% UC 2.2 Vorverarbeiten der Daten
 
 ## Anlegen einer Zeitreihe der Herzfrequenz aus den EKG-Daten
-
-import neurokit2 as nk
 
 ekg_data=pd.DataFrame()
 ekg_data["ECG"] = new_ecg_data["Subject_3"]
@@ -58,7 +57,6 @@ termination = False
 
 folder_input_data = os.path.join(folder_current, 'input_data')
 
-import json
 # Opening JSON file
 
 file_name = folder_input_data = os.path.join(folder_input_data, 'subject_3.json')
@@ -144,4 +142,10 @@ results_file = os.path.join(folder_input_data, 'data.json')
 
 with open(results_file, 'w', encoding='utf-8') as f:
     json.dump(json_data_to_save, f, ensure_ascii=False, indent=4)
+# %%
+
+# %%
+
+# %%
+
 # %%
