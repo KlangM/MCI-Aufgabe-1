@@ -10,6 +10,6 @@
     ## UC 2.5. - Visualisierung der Daten
         # Die zusammengefassten Daten werden geplottet
     ## UC 2.6. - Manuelle Eingabe eines Abbruch-Kriteriums
-        #
+        # Grund des Abbruchs wird manuell eingegeben
     ## UC 2.7. - Speicherung der Daten
         # Daten werden gespeichert
