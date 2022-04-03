@@ -84,7 +84,7 @@ print_zusammenfassung(subject_data, maximum_hr, termination)
 ## Visualisierung der Daten
 # Öffnen der Leistungsdaten
 # Opening JSON file
-def visualisierung():
+def visualisierung(powder_data_watts):
     folder_input_data = os.path.join(folder_current, 'input_data')
     file_name =  os.path.join(folder_input_data, 'power_data_3.txt')
     power_data_watts = open(file_name).read().split("\n")
@@ -93,7 +93,7 @@ def visualisierung():
 
     # erstellen der plots
 
-    def erstellen_plot(peaks_downsampled):
+    def erstellen_plot(peaks_downsampled):   
         peaks['average_HR_10s'].plot()
         peaks_downsampled = peaks[peaks.index % 1000 == 0]  
         peaks_downsampled = peaks_downsampled.reset_index(drop=True)
@@ -106,12 +106,10 @@ def visualisierung():
         peaks_downsampled.plot()
 
         peaks_downsampled["Power (Watt)"].plot()
-
+    
     erstellen_plot(peaks_downsampled)
 
-visualisierung()
-
-
+visualisierung(power_data_watts)
 
 
 #%% UC 2.6 
@@ -138,3 +136,6 @@ with open(results_file, 'w', encoding='utf-8') as f:
     json.dump(json_data_to_save, f, ensure_ascii=False, indent=4)
 
 
+
+#
+# %%
