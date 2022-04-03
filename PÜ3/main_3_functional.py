@@ -84,7 +84,7 @@ print_zusammenfassung(subject_data, maximum_hr, termination)
 ## Visualisierung der Daten
 # Öffnen der Leistungsdaten
 # Opening JSON file
-def visualisierung(powder_data_watts):
+def visualisierung(power_data_watts):
     folder_input_data = os.path.join(folder_current, 'input_data')
     file_name =  os.path.join(folder_input_data, 'power_data_3.txt')
     power_data_watts = open(file_name).read().split("\n")
