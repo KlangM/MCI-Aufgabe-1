@@ -25,11 +25,10 @@ for file in os.listdir(folder_input_data):
         # Erstellen einer Liste von Tests, die zu verarbeiten sind
         list_of_new_tests.append(new_ecg_data)
         new_ecg_data["Subject_"+subject_id].plot()
-
+        
 
 #%% UC 2.2 
 ## Vorverarbeiten der Daten
-
 # Anlegen einer Zeitreihe der Herzfrequenz aus den EKG-Daten
 ekg_data=pd.DataFrame()
 ekg_data["ECG"] = new_ecg_data["Subject_"+subject_id]
@@ -67,7 +66,6 @@ if maximum_hr > subject_max_hr*0.90:
 
 #%% UC 2.4 
 ## Erstellen einer Zusammenfassung
-# Ausgabe einer Zusammenfassung
 print("Summary for Subject " + str(subject_data["subject_id"]))
 print("Year of birth:  " + str(subject_data["birth_year"]))
 print("Test level power in W:  " + str(subject_data["test_power_w"]))
