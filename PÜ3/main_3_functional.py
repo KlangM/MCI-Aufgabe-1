@@ -10,7 +10,6 @@ import neurokit2 as nk
 
 #%% UC 2.1 
 ## Einlesen der Daten
-
 list_of_new_tests = []
 
 # Überprüfen ob Dateien vorhanden sind
@@ -23,26 +22,24 @@ for file in os.listdir(folder_input_data):
         subject_id = file_name.split(".")[0][-1]
         new_ecg_data= pd.read_csv(file_name)
         
-# Erstellen einer Liste von Tests, die zu verarbeiten sind
+        # Erstellen einer Liste von Tests, die zu verarbeiten sind
         list_of_new_tests.append(new_ecg_data)
-
-new_ecg_data["Subject_3"].plot()
-
+        new_ecg_data["Subject_"+subject_id].plot()
+        
 
 #%% UC 2.2 
 ## Vorverarbeiten der Daten
-
 # Anlegen einer Zeitreihe der Herzfrequenz aus den EKG-Daten
 ekg_data=pd.DataFrame()
-ekg_data["ECG"] = new_ecg_data["Subject_3"]
+ekg_data["ECG"] = new_ecg_data["Subject_"+subject_id]
 
-# Find peaks
+# Herfrequenz Maxima
 peaks, info = nk.ecg_peaks(ekg_data["ECG"], sampling_rate=1000)
 number_of_heartbeats = peaks["ECG_R_Peaks"].sum()
 duration_test_min = ekg_data.size/1000/60
 average_hr_test = number_of_heartbeats / duration_test_min
 
-# Calculate heart rate moving average
+# Durchschnittliche Herzfrequenz
 peaks['average_HR_10s'] = peaks.rolling(window=10000).mean()*60*1000
 peaks['average_HR_10s'].plot()
 
@@ -54,11 +51,11 @@ termination = False
 # Vergleich der Maximalen Herzfrequenz mit Alter des Patienten
 folder_input_data = os.path.join(folder_current, 'input_data')
 
-# Opening JSON file
+# Öffnen der JSON Datei
 file_name = folder_input_data = os.path.join(folder_input_data, 'subject_3.json')
 f = open(file_name)
  
-# returns JSON object as a dictionary
+# Ausgeben der JSON Datei als Dictionary
 subject_data = json.load(f)
 maximum_hr = peaks['average_HR_10s'].max()
 subject_max_hr = 220 - (2022 - subject_data["birth_year"])
@@ -69,47 +66,36 @@ if maximum_hr > subject_max_hr*0.90:
 
 #%% UC 2.4 
 ## Erstellen einer Zusammenfassung
-# Ausgabe einer Zusammenfassung
-def print_zusammenfassung(subject_data, maximum_hr, termination):
-    print("Summary for Subject " + str(subject_data["subject_id"]))
-    print("Year of birth:  " + str(subject_data["birth_year"]))
-    print("Test level power in W:  " + str(subject_data["test_power_w"]))
-    print(" \n")
-    print("Maximum HR was: " + str(maximum_hr))
-    print("Was test terminated because exceeding HR " + str(termination))
+print("Zusammenfassung für Patient " + str(subject_data["subject_id"]))
+print("Geburtsjahr:  " + str(subject_data["birth_year"]))
+print("Test Leistung in Watt:  " + str(subject_data["test_power_w"]))
+print("Maximale Herzfrequenz: " + str(maximum_hr))
+print("Wurde der Test wegen zu hoher Herfrequenz abgebrochen? " + str(termination))
+print(" \n")
 
-print_zusammenfassung(subject_data, maximum_hr, termination)
 
 #%% UC 2.5 
 ## Visualisierung der Daten
 # Öffnen der Leistungsdaten
-# Opening JSON file
-def visualisierung(power_data_watts):
-    folder_input_data = os.path.join(folder_current, 'input_data')
-    file_name =  os.path.join(folder_input_data, 'power_data_3.txt')
-    power_data_watts = open(file_name).read().split("\n")
-    power_data_watts.pop(-1)
-    len(power_data_watts)
+folder_input_data = os.path.join(folder_current, 'input_data')
+file_name =  os.path.join(folder_input_data, 'power_data_3.txt')
+power_data_watts = open(file_name).read().split("\n")
+power_data_watts.pop(-1)
+len(power_data_watts)
 
-    # erstellen der plots
+# Erstellung eines Plots
+folder_input_data = os.path.join(folder_current, 'input_data')
+file_name =  os.path.join(folder_input_data, 'power_data_3.txt')
+power_data_watts = open(file_name).read().split("\n")
+power_data_watts.pop(-1)
 
-    def erstellen_plot(peaks_downsampled):   
-        peaks['average_HR_10s'].plot()
-        peaks_downsampled = peaks[peaks.index % 1000 == 0]  
-        peaks_downsampled = peaks_downsampled.reset_index(drop=True)
-        peaks_downsampled = peaks_downsampled.drop(["ECG_R_Peaks"],axis=1)
-        peaks_downsampled
-
-        peaks_downsampled["Power (Watt)"] = pd.to_numeric(power_data_watts)
-        peaks_downsampled["Power (Watt)"] = peaks_downsampled["Power (Watt)"]
-
-        peaks_downsampled.plot()
-
-        peaks_downsampled["Power (Watt)"].plot()
-    
-    erstellen_plot(peaks_downsampled)
-
-visualisierung(power_data_watts)
+peaks_downsampled = peaks[peaks.index % 1000 == 0]  
+peaks_downsampled = peaks_downsampled.reset_index(drop=True)
+peaks_downsampled = peaks_downsampled.drop(["ECG_R_Peaks"],axis=1)
+peaks_downsampled
+peaks_downsampled["Power (Watt)"] = pd.to_numeric(power_data_watts)
+peaks_downsampled["Power (Watt)"] = peaks_downsampled["Power (Watt)"]
+peaks_downsampled.plot()
 
 
 #%% UC 2.6 
@@ -136,6 +122,4 @@ with open(results_file, 'w', encoding='utf-8') as f:
     json.dump(json_data_to_save, f, ensure_ascii=False, indent=4)
 
 
-
-#
 # %%
