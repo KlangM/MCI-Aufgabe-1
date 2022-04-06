@@ -13,3 +13,5 @@
         # Grund des Abbruchs wird manuell eingegeben
     ## UC 2.7. - Speicherung der Daten
         # Daten werden gespeichert
+        
+    # Für diese Aufgabe hätte ich mir eine konkretere Beschreiebung der Programmabläufe statt einer Umformulierung der UC gewünscht -YS
