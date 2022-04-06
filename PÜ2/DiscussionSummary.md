@@ -1,4 +1,4 @@
-## Project backgroung
+## Project background
 ### Purpose of project
 
 Die Software soll dazu dienen EKG Daten zu veranschaulichen damit Diaknostiker und Sportmediziner mit den Daten Arbeiten können 
@@ -38,6 +38,8 @@ Aus diesem muss die Herzrate bestimmt werden.
 Die .json Dateien enthalten Daten über Probanden und Test. Die .csv sind die unverarbeiteten EKG Daten. Die .txt Dateien sind die weiterverarbeiteten .csv Daten welche die Leistung des Probanden wiederspiegelt. Die .txt Datei kann direkt zum visualiesieren verwendet werden. 
 
 Der Test dauert 180s. EKG misst jede ms einen Wert und speichert diesen .csv Datei ab.
+
+*Welche Daten über Probanden und Test? Mit welcher Frequenz werden die Leistungsdaten gemessen? In welchen Einheiten könnten die Daten sein?- YS*
 
 ### Design and implementation constraints
 
