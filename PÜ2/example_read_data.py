@@ -11,4 +11,6 @@ for i in range(3):
      plt.title("Line graph "+str(i+1))
      plt.plot(z,color="green")
      plt.show()
+
+# Gut, aber eine flexible Zahl an Dateien wäre noch besser -YS 
 # %%
