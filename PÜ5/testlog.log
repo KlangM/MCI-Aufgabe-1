@@ -1,1 +1,4 @@
 INFO:2022-04-18 16:38:17,797 new Log
+INFO:2022-04-18 16:38:26,791 Test with subject-id: 1 was invalid, because: 1
+INFO:2022-04-18 16:38:27,791 Test with subject-id: 2 was invalid, because: 2
+INFO:2022-04-18 16:38:28,640 Test with subject-id: 3 was invalid, because: 3
