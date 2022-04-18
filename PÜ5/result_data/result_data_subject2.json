@@ -1,9 +1,10 @@
 {
     "User ID": "2",
-    "Reason for test termation": "2",
+    "Reason for test termation": "",
     "Average Heart Rate": 127.33333333333333,
     "Maximum Heart Rate": 192.0,
     "Test Length (s)": 180,
     "Test Power (W)": 100,
-    "Variance Heart Rate": 127.06380961375706
+    "Variance Heart Rate": 127.06380961375706,
+    "Plot Path": "c:\\Users\\kreff\\OneDrive\\Dokumente\\Visual Studio Code\\MCI-Aufgabe-1\\PÜ5\\result_data\\Plot_of_subject_2.jpeg"
 }

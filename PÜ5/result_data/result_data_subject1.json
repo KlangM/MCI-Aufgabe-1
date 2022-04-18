@@ -5,5 +5,6 @@
     "Maximum Heart Rate": 174.0,
     "Test Length (s)": 180,
     "Test Power (W)": 200,
-    "Variance Heart Rate": 112.12364327949977
+    "Variance Heart Rate": 112.12364327949977,
+    "Plot Path": "c:\\Users\\kreff\\OneDrive\\Dokumente\\Visual Studio Code\\MCI-Aufgabe-1\\PÜ5\\result_data\\Plot_of_subject_1.jpeg"
 }
